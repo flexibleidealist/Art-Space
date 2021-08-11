@@ -20,13 +20,13 @@ Art-Space is an online arts application that allows visual artists to organize g
 ### Client
 
 #### Wireframes
-![link to wireframes]()
+[link to wireframes]()
 
 #### Component Hierarchy
 [link to component hierarchy](https://whimsical.com/component-hierarchy-P6BsaCVmLKW1wdZxSgwQo5)
 
 #### Component File Structure
-[component-file-structure](assets/component-file-structure1.png)
+![component-file-structure](assets/component-file-structure1.png)
 
 
 
