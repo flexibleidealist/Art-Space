@@ -2,7 +2,7 @@
 
 ## About
 
-Art-Space is an online arts application that allows visual artists to organize galleries to share their work in curated virtual shows.
+Art-Space is an online arts application that allows visual artists to share their work in curated virtual shows.
 
 ## MVP
 ### Libraries & Frameworks
@@ -40,7 +40,7 @@ Art-Space is an online arts application that allows visual artists to organize g
 | React components  |    H     |     4 hrs      |         |     TBD     |
 | front-end CRUD/services  |    H     |     4 hrs      |         |     TBD     |
 | front-end testing/debugging  |    H     |     3 hrs      |         |     TBD     |
-| user authentication   https://whimsical.com/art-space-wireframes-17J8J1xS97fcNQd9cPTukc|    H     |     3 hrs      |         |     TBD     |
+| user authentication|    H     |     3 hrs      |         |     TBD     |
 | CSS styling: artists views  |    H     |     3 hrs      |         |     TBD     |
 | CSS styling: visitor views  |    H     |     3 hrs      |         |     TBD     |
 | Post-MVP gallery expansion  |    L     |     2 hrs      |         |     TBD     |
