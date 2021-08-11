@@ -20,13 +20,13 @@ Art-Space is an online arts application that allows visual artists to organize g
 ### Client
 
 #### Wireframes
-![link to wireframes](https://whimsical.com/art-space-wireframes-17J8J1xS97fcNQd9cPTukc)
+![link to wireframes]()
 
 #### Component Hierarchy
-![link to component hierarchy](https://whimsical.com/component-hierarchy-P6BsaCVmLKW1wdZxSgwQo5)
+[link to component hierarchy](https://whimsical.com/component-hierarchy-P6BsaCVmLKW1wdZxSgwQo5)
 
 #### Component File Structure
-![component-file-structure](assets/component-file-structure1.png)
+[component-file-structure](assets/component-file-structure1.png)
 
 
 
@@ -40,7 +40,7 @@ Art-Space is an online arts application that allows visual artists to organize g
 | React components  |    H     |     4 hrs      |         |     TBD     |
 | front-end CRUD/services  |    H     |     4 hrs      |         |     TBD     |
 | front-end testing/debugging  |    H     |     3 hrs      |         |     TBD     |
-| user authentication   |    H     |     3 hrs      |         |     TBD     |
+| user authentication   https://whimsical.com/art-space-wireframes-17J8J1xS97fcNQd9cPTukc|    H     |     3 hrs      |         |     TBD     |
 | CSS styling: artists views  |    H     |     3 hrs      |         |     TBD     |
 | CSS styling: visitor views  |    H     |     3 hrs      |         |     TBD     |
 | Post-MVP gallery expansion  |    L     |     2 hrs      |         |     TBD     |
