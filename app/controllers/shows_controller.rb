@@ -1,5 +1,6 @@
 class ShowsController < ApplicationController
   before_action :get_show, only: [:show, :update, :destroy]
+  # before_action :authorize_request, only: [:update, :create, :destroy]
   
   def index
     shows = Show.where(artist_id: params[:artist_id])

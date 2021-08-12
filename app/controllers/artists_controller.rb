@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :get_artist, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:verify]
   
   def index
     artists = Artist.all
@@ -11,9 +12,13 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    new_artist = Artist.new(artist_params)
+    new_artist = Artist.new(artist_signup_params)
     if new_artist.save
-      render json: new_artist, status: :created 
+      token = create_token(new_artist.id)
+      render json: {
+        new_artist: new_artist.attributes.except("password_digest"),
+        token: token,
+      }, status: :created
     else 
       render json: new_artist.errors, status: :unprocessable_entity
     end
@@ -35,7 +40,37 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def login
+    artist = Artist.find_by(username: artist_signin_params[:username])
+    if artist && artist.authenticate(artist_signin_params[:password])
+      token = create_token(artist.id)
+      render json: {
+        artist: artist.attributes.except("password_digest"),
+        token: token,
+      }, status: :ok 
+    else
+      render json: { error: "unauthorized"}, status: :unauthorized
+    end
+  end
+
+  def verify
+    render json: @current_artist.attributes.except("password_digest"), status: :ok
+  end
+
   private 
+
+  def artist_signup_params
+    params.require(:artist).permit(:name, :username, :email, :password, :artist_statement, :image_url)
+  end
+
+  def artist_signin_params
+    params.require(:artist).permit(:username, :password)
+  end
+
+  def create_token(id)
+    payload = {id: id, exp: 48.hours.from_now.to_i}
+    JWT.encode(payload, SECRET_KEY)
+  end
 
   def get_artist
     @artist = Artist.find(params[:id])

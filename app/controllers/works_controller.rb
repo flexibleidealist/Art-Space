@@ -1,5 +1,7 @@
 class WorksController < ApplicationController
   before_action :get_work, only: [:show, :update, :destroy]
+    # before_action :authorize_request, only: [:update, :create, :destroy]
+
   def index
     works = Work.where(show_id: params[:show_id])
     render json: works, status: :ok
