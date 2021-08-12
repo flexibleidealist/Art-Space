@@ -41,7 +41,6 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
-
   def artist_params
     params.require(:artist).permit(:name, :email, :image_url, :artist_statement, :username, :password_digest)
   end
