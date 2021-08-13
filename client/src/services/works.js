@@ -1,6 +1,28 @@
-// import api from "./apiConfig"
+import api from "./apiConfig"
 
-// export const getAllWorks = (id) => {
-//   const res = api.get(`/shows/${id}/works`)
-//   return res.data
-// }
+export const getWork = async (id) => {
+  try {
+    const res = await api.get(`/works/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const editWork = async (id, workData) => {
+  try {
+    const res = await api.put(`/works/${id}`, workData)
+    return res.data
+  } catch (error) {
+  throw error
+  }
+}
+
+export const createWork = async (workData) => {
+  try {
+    const res = await api.post("/works", workData)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

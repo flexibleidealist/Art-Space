@@ -24,7 +24,7 @@ export const verify = async () => {
   const token = localStorage.getItem("authToken")
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`
-    const res = await api.get(artists/verify)
+    const res = await api.get("artists/verify")
     return res.data
   }
 }

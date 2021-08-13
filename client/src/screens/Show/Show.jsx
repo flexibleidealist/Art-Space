@@ -10,10 +10,8 @@ function Show() {
     const fetchShow = async (id) => {
       const current_show = await getShow(id) 
       setShow(current_show)
-      console.log(current_show)
   } 
     fetchShow(params.id)
-    console.log(show)
   }, [])
 
   return(
@@ -23,14 +21,14 @@ function Show() {
         <p>{show.description}</p>
         <img src={show.image_url} alt="show poster"></img>
       </header>
-      {show.works.map(work => (
+      {show.works ? show.works.map(work => (
         <div key={work.id} className="work-container">
           <img src={`${work.image_url}`}></img>
           <div className="work-button-container">
             <button className="work-button"></button>
           </div>
         </div>
-      ))}
+      )) : <h3>loading...</h3>}
       <footer className="show-footer">
         <img className="artist-pic"></img>
         <p className="artist-statement">artist's statement here</p>

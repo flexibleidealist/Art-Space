@@ -17,19 +17,19 @@ function Main() {
       <Route exact path="/shows/:id">
         <Show />
       </Route>
-      <Route exact path="/artists/:artist_id/shows/create-show">
+      <Route exact path="/shows">
         <ShowCreate />
       </Route>
-      <Route exact path="/artists/:artist_id/shows/:id/edit">
+      <Route exact path="/edit-show">
         <ShowEdit />
       </Route>
       <Route exact path="/shows">
         <ShowMenu />
       </Route>
-      <Route exact path="shows/:show_id/works/:id">
+      <Route exact path="/works/:id">
         <WorkDetail />
       </Route>
-      <Route exact path="/artists/:artist_id/shows/:show_id/works/:id/edit">
+      <Route exact path="/edit-work">
         <WorkEdit />
       </Route>
     </div>
