@@ -3,12 +3,12 @@ class ShowsController < ApplicationController
   # before_action :authorize_request, only: [:update, :create, :destroy]
   
   def index
-    shows = Show.where(artist_id: params[:artist_id])
+    shows = Show.all
     render json: shows, status: :ok
   end
 
   def show
-    render json: @show, status: :ok
+    render json: @show, include: :works, status: :ok
   end
 
   def create
@@ -33,7 +33,11 @@ class ShowsController < ApplicationController
     render json: "Deleted", status: :ok
   end
 
-
+  # custom method
+  #  def get_all_shows
+  #   shows = Show.all
+  #   render json: shows, status: :ok
+  #  end
 
   private
 

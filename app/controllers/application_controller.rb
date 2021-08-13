@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
 
   private
   
-  def decode_token
+  def decode_token token
     JWT.decode(token, SECRET_KEY)
   end
 end
