@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 import { signup } from "../../services/artists"
 
-function SignUp() {
+function SignUp(props) {
+  const history = useHistory()
   const [formData, setFormData] = useState({
     name: "",
     username: "",
@@ -10,8 +12,7 @@ function SignUp() {
     artist_statement: "",
     image_url: "",
   })
-  const [currentUser, setCurrentUser] = useState({})
-
+  
   const handleChange = (event) =>
     setFormData({
       ...formData,
@@ -21,8 +22,8 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     const artist = await signup(formData)
-    setCurrentUser(artist)
-    console.log(currentUser)
+    props.setCurrentUser(artist)
+    history.push("/")
   }
 
   return(
@@ -60,9 +61,8 @@ function SignUp() {
         onChange={handleChange}
         required
       />
-      <input
+      <textarea
         name="artist_statement"
-        type="textarea"
         value={formData.artist_statement}
         placeholder="Artist Statement"
         onChange={handleChange}

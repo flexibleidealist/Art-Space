@@ -8,29 +8,30 @@ import WorkDetail from "../../screens/WorkDetail/WorkDetail.jsx"
 import WorkEdit from "../../screens/WorkEdit/WorkEdit.jsx"
 
 
-function Main() {
+function Main(props) {
+  const currentUser = props.currentUser
   return(
     <div className="main">
       <Route exact path="/">
-        <Home />
+        <Home currentUser={currentUser}/>
       </Route>
       <Route exact path="/shows/:id">
-        <Show />
+        <Show currentUser={currentUser}/>
       </Route>
-      <Route exact path="/shows">
-        <ShowCreate />
+      <Route exact path="/create-show">
+        <ShowCreate currentUser={currentUser}/>
       </Route>
       <Route exact path="/edit-show">
-        <ShowEdit />
+        <ShowEdit currentUser={currentUser}/>
       </Route>
       <Route exact path="/shows">
         <ShowMenu />
       </Route>
       <Route exact path="/works/:id">
-        <WorkDetail />
+        <WorkDetail currentUser={currentUser}/>
       </Route>
       <Route exact path="/edit-work">
-        <WorkEdit />
+        <WorkEdit currentUser={currentUser}/>
       </Route>
     </div>
   )

@@ -17,3 +17,11 @@ export const getShow = async (id) => {
     throw error
   }
 }
+
+export const createShow = async (showData) => {
+  try{
+    const res = await api.post(`/shows`, { show: showData})
+  } catch (error) {
+    throw error
+  }
+}

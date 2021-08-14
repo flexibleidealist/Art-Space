@@ -12,15 +12,15 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    new_artist = Artist.new(artist_signup_params)
-    if new_artist.save
-      token = create_token(new_artist.id)
+    artist = Artist.new(artist_signup_params)
+    if artist.save
+      token = create_token(artist.id)
       render json: {
-        new_artist: new_artist.attributes.except("password_digest"),
+        artist: artist.attributes.except("password_digest"),
         token: token,
       }, status: :created
     else 
-      render json: new_artist.errors, status: :unprocessable_entity
+      render json: artist.errors, status: :unprocessable_entity
     end
   end
 
