@@ -1,10 +1,10 @@
 import Nav from "../Nav/Nav.jsx"
 
 function Layout(props) {
-  const { setCurrentUser } = props
+  const { currentUser, setCurrentUser } = props
   return(
     <div className="layout">
-      <Nav setCurrentUser={setCurrentUser}/>
+      <Nav currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <div className="layout-children">
         {props.children}
       </div>

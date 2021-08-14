@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div>
-      <Layout setCurrentUser={setCurrentUser}>
+      <Layout currentUser={currentUser} setCurrentUser={setCurrentUser}>
         <Main currentUser={currentUser}/>
         <Route exact path="/artists/login">
           <SignIn currentUser={currentUser} setCurrentUser={setCurrentUser} />
