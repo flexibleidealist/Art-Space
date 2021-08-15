@@ -29,10 +29,13 @@ function Show(props) {
   return(
     <div>
       <header className="show-header">
-        <h1>{show.title}</h1>
-        <p>{show.description}</p>
+        <div className="show-header-text"> 
+          <h1>{show.title}</h1>
+          <p>{show.description}</p>
+        </div>
         <img src={show.image_url} alt="show poster"></img>
       </header>
+      <section className="works-section">
       {show.works ? show.works.map(work => (
         <div key={work.id} className="work-container">
           <img src={`${work.image_url}`}></img>
@@ -41,6 +44,7 @@ function Show(props) {
           </div>
         </div>
       )) : <h3>loading...</h3>}
+      </section>
       <footer className="show-footer">
         <img src={artist.image_url} className="artist-pic"></img>
         <p className="artist-statement">{artist.artist_statement}</p>
