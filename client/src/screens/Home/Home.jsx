@@ -1,6 +1,8 @@
-function Home(){
+function Home(props){
+  const { currentUser } = props
+
   return(
-    <h1>this is the homepage</h1>
+    <h1>Art Space</h1>
   )
 }
 

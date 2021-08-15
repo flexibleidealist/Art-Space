@@ -21,6 +21,7 @@ function ShowCreate(props) {
       ...formData,
       [event.target.name]: event.target.value,
     })
+
     const handleSubmit = async (event) => {
       event.preventDefault()
       await createShow(formData)
@@ -30,7 +31,8 @@ function ShowCreate(props) {
 
   return(
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <label htmlFor="title">show title: </label>
         <input
           name="title"
           type="text"
@@ -39,6 +41,7 @@ function ShowCreate(props) {
           onChange={handleChange}
           required
         />
+        <label htmlFor="description">description: </label>
         <textarea
           name="description"
           rows="5"
@@ -46,6 +49,7 @@ function ShowCreate(props) {
           onChange={handleChange}
           required
         />
+        <label htmlFor="image_url">image URL: </label>
         <input
           name="image_url"
           type="text"

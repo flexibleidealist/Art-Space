@@ -1,0 +1,13 @@
+.signin-form-container {
+  margin: 10px 10px;
+}
+
+#signin-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#signin-form input {
+  margin: 10px;
+}

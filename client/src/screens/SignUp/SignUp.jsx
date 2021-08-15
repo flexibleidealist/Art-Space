@@ -28,7 +28,7 @@ function SignUp(props) {
 
   return(
     <div>
-    <form onSubmit={handleSubmit} className="signup-form">
+    <form onSubmit={handleSubmit} className="signup-form" autocomplete="off">
       <input 
         name="name"
         type="text"

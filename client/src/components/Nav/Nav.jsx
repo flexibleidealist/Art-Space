@@ -1,6 +1,6 @@
-import { useEffect } from "react"
 import { useHistory, Link } from "react-router-dom"
 import { signout } from "../../services/artists.js"
+import "./Nav.css"
 
 function Nav(props) {
   const history = useHistory()
@@ -14,7 +14,7 @@ function Nav(props) {
 
   const userNavBar = (
     <div className="user-nav-bar">
-      <h6>Hello, currentUser.username</h6>
+      <p>{`Hello, ${currentUser?.username}`}</p>
       <Link to="/shows">shows</Link>
       <Link to="/create-show">create show</Link>
       <button className="signout-button" onClick={handleClick}>sign out</button>
@@ -31,7 +31,7 @@ function Nav(props) {
 
   return(
     <div className="nav">
-      <Link to="/">Home</Link>
+      <Link to="/">ArtSpace</Link>
       { currentUser ? userNavBar : defaultNavBar }
     </div>
   )

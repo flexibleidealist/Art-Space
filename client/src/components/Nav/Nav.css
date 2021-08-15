@@ -1,0 +1,20 @@
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  border-bottom: 1px solid gray;
+}
+
+.nav * {
+  display: inline;
+  margin: 0 10px;
+}
+
+.user-nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getShow } from "../../services/shows.js"
+import { getArtist } from "../../services/artists.js"
+import "./Show.css"
 
-function Show() {
+function Show(props) {
   const params = useParams()
+  const { currentUser } = props
   const [show, setShow] = useState({})
+  const [artist, setArtist] = useState({})
 
   useEffect(() => {
     const fetchShow = async (id) => {
@@ -13,6 +17,14 @@ function Show() {
   } 
     fetchShow(params.id)
   }, [])
+
+  useEffect(() => {
+    const fetchArtist = async (id) => {
+      const showArtist = await getArtist(id)
+      setArtist(showArtist)
+    }
+    fetchArtist(show.artist_id)
+  }, [show])
 
   return(
     <div>
@@ -30,8 +42,8 @@ function Show() {
         </div>
       )) : <h3>loading...</h3>}
       <footer className="show-footer">
-        <img className="artist-pic"></img>
-        <p className="artist-statement">artist's statement here</p>
+        <img src={artist.image_url} className="artist-pic"></img>
+        <p className="artist-statement">{artist.artist_statement}</p>
       </footer>
       
     </div>

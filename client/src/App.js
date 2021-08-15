@@ -8,7 +8,7 @@ import Layout from "./components/Layout/Layout.jsx"
 import './App.css'
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({})
+  const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
     const fetchUser = async () => {

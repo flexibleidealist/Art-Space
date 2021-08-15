@@ -1,8 +1,11 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 import { signin } from "../../services/artists"
+import "./SignIn.css"
 
 function SignIn(props) {  
-  const setCurrentUser = props.setCurrentUser
+  const { currentUser, setCurrentUser } = props
+  const history = useHistory()
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -18,10 +21,13 @@ function SignIn(props) {
     event.preventDefault()
     const artist = await signin(formData)
     setCurrentUser(artist)
+    history.push("/")
   }
 
   return(
-    <form onSubmit={handleSubmit}>
+    <div className="signin-form-container">
+    <form id="signin-form" onSubmit={handleSubmit} >
+      <label htmlFor="username">username: </label>
       <input
         name="username"
         type="text"
@@ -29,7 +35,9 @@ function SignIn(props) {
         placeholder="username"
         onChange={handleChange}
         required
+        autoComplete="off"
       />
+      <label htmlFor="password">password: </label>
       <input
         name="password"
         type="password"
@@ -37,9 +45,11 @@ function SignIn(props) {
         placeholder="password"
         onChange={handleChange}
         required
+        autoComplete="off"
       />
       <button type="submit">submit</button>
     </form>
+    </div>
   )
 }
 export default SignIn

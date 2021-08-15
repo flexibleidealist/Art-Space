@@ -37,3 +37,12 @@ export const signout = () => {
   api.defaults.headers.common.authorization = null
 
 }
+
+export const getArtist = async (id) => {
+  try {
+    const res = await api.get(`/artists/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+}
+}
