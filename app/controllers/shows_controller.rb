@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   before_action :get_show, only: [:show, :update, :destroy]
-  # before_action :authorize_request, only: [:update, :create, :destroy]
+  before_action :authorize_request, only: [:update, :create, :destroy]
   
   def index
     shows = Show.all
@@ -33,11 +33,10 @@ class ShowsController < ApplicationController
     render json: "Deleted", status: :ok
   end
 
-  # custom method
-  #  def get_all_shows
-  #   shows = Show.all
-  #   render json: shows, status: :ok
-  #  end
+  # def check_for_show
+  #   show = Show.where(artist_id: params[:id])
+  #   render json: show, status: :ok
+  # end
 
   private
 
@@ -49,4 +48,5 @@ class ShowsController < ApplicationController
     params.require(:show).permit(:title, :description, :image_url, :artist_id)
   end
 
+  
 end

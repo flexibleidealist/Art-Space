@@ -14,6 +14,7 @@ export const signup = async (artistData) => {
 export const signin = async (artistData) => {
   const res = await api.post("/artists/login", { artist: artistData })
   const { token } = res.data
+  console.log(res)
   if (token) {
     localStorage.setItem("authToken", token)
     api.defaults.headers.common.authorization = `Bearer ${token}`

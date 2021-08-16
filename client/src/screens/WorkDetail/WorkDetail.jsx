@@ -11,7 +11,6 @@ function WorkDetail() {
     const fetchWork = async (id) => {
       const current_work = await getWork(id)
       setWork(current_work)
-      console.log(work)
     }
     fetchWork(params.id)
 
@@ -25,6 +24,9 @@ function WorkDetail() {
           <h1>{work.year}</h1>
           <h1>{work.materials}</h1>
         </div>
+        {/* {currentUser.id === work.artist_id ?
+          <Link to={`/works/${work.id}/edit`}><button>edit details</button></Link>
+        } */}
     </div>
   )
 }

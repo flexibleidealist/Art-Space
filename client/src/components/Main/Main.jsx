@@ -16,23 +16,23 @@ function Main(props) {
       <Route exact path="/">
         <Home currentUser={currentUser}/>
       </Route>
+      <Route exact path="/shows/:id/edit">
+        <ShowEdit currentUser={currentUser}/>
+      </Route>
       <Route exact path="/shows/:id">
         <Show currentUser={currentUser}/>
       </Route>
       <Route exact path="/create-show">
         <ShowCreate currentUser={currentUser}/>
       </Route>
-      <Route exact path="/edit-show">
-        <ShowEdit currentUser={currentUser}/>
-      </Route>
       <Route exact path="/shows">
         <ShowMenu />
       </Route>
+      <Route exact path="/works/:id/edit">
+        <WorkEdit currentUser={currentUser}/>
+      </Route>
       <Route exact path="/works/:id">
         <WorkDetail currentUser={currentUser}/>
-      </Route>
-      <Route exact path="/edit-work">
-        <WorkEdit currentUser={currentUser}/>
       </Route>
       <Route exact path="/artists/:id">
         <Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/>

@@ -8,7 +8,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    render json: @artist
+    render json: @artist, include: :shows, status: :ok
   end
 
   def create
@@ -18,6 +18,7 @@ class ArtistsController < ApplicationController
       render json: {
         artist: artist.attributes.except("password_digest"),
         token: token,
+        include: :shows
       }, status: :created
     else 
       render json: artist.errors, status: :unprocessable_entity
@@ -26,7 +27,7 @@ class ArtistsController < ApplicationController
 
   def update
     if @artist.update(artist_params)
-      render json: @artist, status: :ok
+      render json: @artist, include: :shows, status: :ok
     else 
       render json: artist.errors, status: :unprocessable_entity
     end
@@ -47,6 +48,7 @@ class ArtistsController < ApplicationController
       render json: {
         artist: artist.attributes.except("password_digest"),
         token: token,
+        include: :shows
       }, status: :ok 
     else
       render json: { error: "unauthorized"}, status: :unauthorized
@@ -54,7 +56,7 @@ class ArtistsController < ApplicationController
   end
 
   def verify
-    render json: @current_artist.attributes.except("password_digest"), status: :ok
+    render json: @current_artist.attributes.except("password_digest"), include: :shows, status: :ok
   end
 
   private 

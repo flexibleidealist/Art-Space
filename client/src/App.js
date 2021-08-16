@@ -22,13 +22,13 @@ function App() {
   return (
     <div>
       <Layout currentUser={currentUser} setCurrentUser={setCurrentUser}>
-        <Main currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-        <Route exact path="/artists/login">
+        <Route exact path="/login">
           <SignIn currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/artists">
           <SignUp currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
+        <Main currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       </Layout>
     </div>
   );

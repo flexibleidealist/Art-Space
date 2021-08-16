@@ -21,7 +21,17 @@ export const getShow = async (id) => {
 export const createShow = async (showData) => {
   try{
     const res = await api.post(`/shows`, { show: showData})
+    return res.data
   } catch (error) {
     throw error
   }
 }
+
+// export const checkForShow = async (artistID) => {
+//   try{
+//     const res = await api.get(`/shows/check/${artistID}`)
+//     return res.data
+//   } catch (error) {
+//     throw error
+//   }
+// }
