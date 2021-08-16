@@ -27,8 +27,9 @@ function SignIn(props) {
   return(
     <div className="signin-form-container">
     <form id="signin-form" onSubmit={handleSubmit} >
-      <label htmlFor="username">username: </label>
-      <input
+      <div className="input">
+        <label htmlFor="username">username:</label>
+        <input
         name="username"
         type="text"
         value={formData.username}
@@ -36,9 +37,11 @@ function SignIn(props) {
         onChange={handleChange}
         required
         autoComplete="off"
-      />
-      <label htmlFor="password">password: </label>
-      <input
+        />
+      </div>
+      <div className="input">
+        <label htmlFor="password">password:</label>
+        <input
         name="password"
         type="password"
         value={formData.password}
@@ -46,7 +49,8 @@ function SignIn(props) {
         onChange={handleChange}
         required
         autoComplete="off"
-      />
+        />
+      </div>
       <button type="submit">submit</button>
     </form>
     </div>

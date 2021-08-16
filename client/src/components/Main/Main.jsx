@@ -6,10 +6,11 @@ import ShowEdit from "../../screens/ShowEdit/ShowEdit.jsx"
 import ShowMenu from "../../screens/ShowMenu/ShowMenu.jsx"
 import WorkDetail from "../../screens/WorkDetail/WorkDetail.jsx"
 import WorkEdit from "../../screens/WorkEdit/WorkEdit.jsx"
+import Profile from "../../screens/Profile/Profile.jsx"
 
 
 function Main(props) {
-  const currentUser = props.currentUser
+  const { currentUser, setCurrentUser } = props
   return(
     <div className="main">
       <Route exact path="/">
@@ -32,6 +33,9 @@ function Main(props) {
       </Route>
       <Route exact path="/edit-work">
         <WorkEdit currentUser={currentUser}/>
+      </Route>
+      <Route exact path="/artists/:id">
+        <Profile currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       </Route>
     </div>
   )

@@ -1,21 +1,19 @@
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { signup } from "../../services/artists"
+import "./SignUp.css"
 
 function SignUp(props) {
   const history = useHistory()
   const [formData, setFormData] = useState({
-    name: "",
     username: "",
     email: "",
     password: "",
-    artist_statement: "",
-    image_url: "",
   })
   
   const handleChange = (event) =>
     setFormData({
-      ...formData,
+      // ...formData,
       [event.target.name]: event.target.value,
     });
 
@@ -27,55 +25,41 @@ function SignUp(props) {
   }
 
   return(
-    <div>
-    <form onSubmit={handleSubmit} className="signup-form" autocomplete="off">
-      <input 
-        name="name"
-        type="text"
-        value={formData.name}
-        placeholder="name"
-        onChange={handleChange}
-        required
-      />
-      <input
-        name="username"
-        type="text"
-        value={formData.username}
-        placeholder="username"
-        onChange={handleChange}
-        required
-      />
-      <input
-        name="email"
-        type="text"
-        value={formData.email}
-        placeholder="email"
-        onChange={handleChange}
-        required
-      />
-      <input
-        name="password"
-        type="password"
-        value={formData.password}
-        placeholder="password"
-        onChange={handleChange}
-        required
-      />
-      <textarea
-        name="artist_statement"
-        value={formData.artist_statement}
-        placeholder="Artist Statement"
-        onChange={handleChange}
-        required
-      />
-      <input
-        name="image_url"
-        type="text"
-        value={formData.image_url}
-        placeholder="URL for Profile Pic"
-        onChange={handleChange}
-        required
-      />
+    <div className="signup-form-container">
+    <form onSubmit={handleSubmit} id="signup-form" autocomplete="off">
+      <div className="input">
+        <label htmlFor="username">username:</label>
+        <input
+          name="username"
+          type="text"
+          value={formData.username}
+          placeholder="username"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="input">
+        <label htmlFor="email">email:</label>
+        <input
+          name="email"
+          type="text"
+          value={formData.email}
+          placeholder="email"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="input">
+        <label htmlFor="password">password:</label>
+        <input
+          name="password"
+          type="password"
+          value={formData.password}
+          placeholder="password"
+          onChange={handleChange}
+          required
+        />
+      </div>
       <button type="submit">submit</button>
     </form>
     </div>

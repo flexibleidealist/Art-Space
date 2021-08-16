@@ -1,17 +1,21 @@
 .show-header {
   display: flex;
+  padding: 2vh 5vw;
 }
 
 .works-section {
+  padding: 0 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-snap-type: y mandatory;
 }
 
 .work-container {
   height: 100vh;
   padding-top: 5vh;
   padding-bottom: 10vh;
+  scroll-snap-align: start;
 }
 .work-container img {
   max-width: 75vw;

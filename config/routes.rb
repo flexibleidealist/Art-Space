@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :works, only: [:show, :create, :update, :destroy]
 
 
-  resources :artists, only: [:show, :create, :update, :destroy]
-  post "artists/login", to: "artists#login"
   get "artists/verify", to: "artists#verify"
-
+  post "artists/login", to: "artists#login"
+  resources :artists, only: [:show, :create, :update, :destroy]
+  
 end

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { getShow } from "../../services/shows.js"
 import { getArtist } from "../../services/artists.js"
 import "./Show.css"
@@ -40,7 +40,7 @@ function Show(props) {
         <div key={work.id} className="work-container">
           <img src={`${work.image_url}`}></img>
           <div className="work-button-container">
-            <button className="work-button"></button>
+            <Link to={`/works/${work.id}`}><button className="work-button"></button></Link>
           </div>
         </div>
       )) : <h3>loading...</h3>}

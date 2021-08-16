@@ -23,6 +23,15 @@ export const signin = async (artistData) => {
   }
 }
 
+export const updateArtist = async (id, artistData) => {
+  try{
+    const res = await api.put(`/artists/${id}`, {artist: artistData})
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const verify = async () => {
   const token = localStorage.getItem("authToken")
   if (token) {
@@ -44,5 +53,6 @@ export const getArtist = async (id) => {
     return res.data
   } catch (error) {
     throw error
+  }
 }
-}
+

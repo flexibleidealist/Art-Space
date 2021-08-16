@@ -1,0 +1,25 @@
+.work-detail {
+  display: flex;
+  padding: 8vh 5vw;
+}
+
+.work-detail img {
+  max-width: 50vw;
+  max-height: 85vh;
+  /* prevent stretching with aspect ratio */
+}
+
+.work-text {
+  padding: 15vh 2vw;
+  font-size: 1.75em;
+}
+
+.work-text * {
+  margin: 15px 8px;
+}
+
+.work-title {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 25px;
+}

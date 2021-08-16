@@ -60,7 +60,7 @@ class ArtistsController < ApplicationController
   private 
 
   def artist_signup_params
-    params.require(:artist).permit(:name, :username, :email, :password, :artist_statement, :image_url)
+    params.require(:artist).permit(:username, :email, :password)
   end
 
   def artist_signin_params
@@ -77,6 +77,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :email, :image_url, :artist_statement, :username, :password_digest)
+    params.require(:artist).permit(:name, :email, :image_url, :artist_statement, :username)
   end
 end

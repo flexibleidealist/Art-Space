@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
       <Layout currentUser={currentUser} setCurrentUser={setCurrentUser}>
-        <Main currentUser={currentUser}/>
+        <Main currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         <Route exact path="/artists/login">
           <SignIn currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
