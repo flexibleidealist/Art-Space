@@ -13,9 +13,9 @@ frida = Artist.create!(name: "Frida Kahlo", artist_statement: "Nothing is absolu
 
   pp "#{Artist.count} artists created!"
 
-show1 = Show.create!(title: "Unseen", description: "Solo exhibition of collage and assemblages organized around the concept of the seen and the unseen.", artist_id: nicholas[:id], image_url: "image.png")
+show1 = Show.create!(title: "Nicholas Charles: Unseen", description: "Solo exhibition of collage and assemblages organized around the concept of the seen and the unseen.", artist_id: nicholas[:id], image_url: "https://i.imgur.com/JjLJ4Y6.png")
 
-show2 = Show.create!(title: "Self-Portraits from the 40s", description: "They thought I was a Surrealist, but I wasn’t. I never painted dreams. I painted my own reality. I am my own muse. I am the subject I know best. The subject I want to better.", artist_id: frida[:id], image_url: "https://upload.wikimedia.org/wikipedia/en/1/1e/Frida_Kahlo_%28self_portrait%29.jpg")
+show2 = Show.create!(title: "Frida Kahlo: Self-Portraits from the 40s", description: "They thought I was a Surrealist, but I wasn’t. I never painted dreams. I painted my own reality. I am my own muse. I am the subject I know best. The subject I want to better.", artist_id: frida[:id], image_url: "https://upload.wikimedia.org/wikipedia/en/1/1e/Frida_Kahlo_%28self_portrait%29.jpg")
 
 pp "#{Show.count} shows created!"
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { getAllShows } from "../../services/shows.js"
-
+import "./ShowMenu.css"
 function ShowMenu() {
   const [shows, setShows] = useState([]);
 
@@ -16,7 +16,7 @@ function ShowMenu() {
   }, []);
 
   return(
-    <div>
+    <div className="show-menu-container">
       {shows.map((show) => (
         <Link to={`/shows/${show.id}`}> 
           <div className="show-link" key={show.id}>

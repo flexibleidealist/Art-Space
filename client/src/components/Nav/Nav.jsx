@@ -14,7 +14,6 @@ function Nav(props) {
       const allShows = await getAllShows();
       const matchingShow = allShows.filter(show => show.artist_id === currentUser?.id)
       setShow(matchingShow)
-
     };
     fetchShows();
   }, [currentUser])
@@ -33,7 +32,7 @@ function Nav(props) {
         <Link to={`/shows/${show[0].id}/edit`}>edit my show</Link>
         :
         <Link to="/create-show">create show</Link>
-    }
+      }
       <Link to={`/artists/${currentUser?.id}`}>my profile</Link>
       <button className="signout-button" onClick={handleClick}>sign out</button>
     </div>
@@ -49,7 +48,7 @@ function Nav(props) {
 
   return(
     <div className="nav">
-      <Link to="/">ArtSpace</Link>
+      <Link id="logo" to="/">ArtSpace</Link>
       { currentUser ? userNavBar : defaultNavBar }
     </div>
   )

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { updateArtist } from "../../services/artists.js"
+import ShowFooter from "../../components/ShowFooter/ShowFooter.jsx"
 import "./Profile.css"
 
 function Profile(props) {
@@ -65,6 +66,9 @@ function Profile(props) {
         </div>
         <button type="submit">submit</button>
       </form>
+      <div className="profile-preview visible">
+        <ShowFooter artist={currentUser} />
+      </div>
     </div>
   )
 }

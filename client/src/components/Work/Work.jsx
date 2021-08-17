@@ -6,7 +6,7 @@ function Work(props) {
     <div className="work-container">
       <img src={`${work.image_url}`}></img>
       <div className="work-button-container">
-      <Link to={`/works/${work.id}`}><button className="work-button"></button></Link>
+      <Link to={`/works/${work.id}`}><button className="work-button">details</button></Link>
       </div>
     </div>
   )

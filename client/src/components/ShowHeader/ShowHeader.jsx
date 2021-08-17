@@ -1,3 +1,5 @@
+import "./ShowHeader.css"
+
 function ShowHeader(props){
   const { show } = props
   return(
@@ -6,7 +8,7 @@ function ShowHeader(props){
         <h1>{show.title}</h1>
         <p>{show.description}</p>
       </div>
-      <img src={show.image_url} alt="show poster"></img>
+      <img className ="show-poster" src={show.image_url} alt="show poster"></img>
     </header>
   )
 }
