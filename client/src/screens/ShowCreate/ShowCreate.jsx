@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { createShow } from "../../services/shows.js"
 import { createWork } from "../../services/works.js"
 function ShowCreate(props) {
-  const currentUser = props.currentUser
+  const { currentUser } = props
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -12,7 +12,7 @@ function ShowCreate(props) {
   const [showID, setShowID] = useState(null)
   const [workData, setWorkData] = useState({
     title: "",
-    year: 0,
+    year: "",
     materials: "",
     image_url: "",
     show_id: "",

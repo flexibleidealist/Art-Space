@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
-import { getWork, editWork } from "../../services/works.js"
+import { getWork, editWork, deleteWork } from "../../services/works.js"
 
 function WorkEdit() {
   const params = useParams()
@@ -34,6 +34,10 @@ function WorkEdit() {
     history.push(`/works/${params.id}`)
   }
 
+  const handleDelete = async () => {
+    await deleteWork(workData.id)
+    history.push(`/shows/${workData.show_id}/edit`)
+  }
   return(
   <form onSubmit={handleSubmit} className="work-edit-form">
     <label htmlFor="title">work title:</label>
@@ -67,7 +71,9 @@ function WorkEdit() {
       onChange={handleChange}
     />
   <button type="submit">submit</button>
+  <button onClick={handleDelete}>remove work from show</button>
   </form>  
+
 )
 }
 

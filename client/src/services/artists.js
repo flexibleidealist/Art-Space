@@ -18,7 +18,6 @@ export const signin = async (artistData) => {
   if (token) {
     localStorage.setItem("authToken", token)
     api.defaults.headers.common.authorization = `Bearer ${token}`
-    console.log(res.data.artist)
     return res.data.artist
     
   }

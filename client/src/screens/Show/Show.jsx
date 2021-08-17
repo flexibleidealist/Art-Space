@@ -2,7 +2,10 @@ import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { getShow } from "../../services/shows.js"
 import { getArtist } from "../../services/artists.js"
+import Work from "../../components/Work/Work.jsx"
+import ShowFooter from "../../components/ShowFooter/ShowFooter.jsx"
 import "./Show.css"
+import ShowHeader from "../../components/ShowHeader/ShowHeader.jsx"
 
 function Show(props) {
   const params = useParams()
@@ -28,28 +31,13 @@ function Show(props) {
 
   return(
     <div>
-      <header className="show-header">
-        <div className="show-header-text"> 
-          <h1>{show.title}</h1>
-          <p>{show.description}</p>
-        </div>
-        <img src={show.image_url} alt="show poster"></img>
-      </header>
+      <ShowHeader show={show} />
       <section className="works-section">
       {show.works ? show.works.map(work => (
-        <div key={work.id} className="work-container">
-          <img src={`${work.image_url}`}></img>
-          <div className="work-button-container">
-            <Link to={`/works/${work.id}`}><button className="work-button"></button></Link>
-          </div>
-        </div>
+        <Work key={work.id} work={work}/>
       )) : <h3>loading...</h3>}
       </section>
-      <footer className="show-footer">
-        <img src={artist.image_url} className="artist-pic"></img>
-        <p className="artist-statement">{artist.artist_statement}</p>
-      </footer>
-      
+      <ShowFooter artist={artist} />
     </div>
   )
 }

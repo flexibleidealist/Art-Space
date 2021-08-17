@@ -20,8 +20,25 @@ export const getShow = async (id) => {
 
 export const createShow = async (showData) => {
   try{
-    const res = await api.post(`/shows`, { show: showData})
+    const res = await api.post(`/shows`, { show: showData })
     return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const updateShow = async (id, showData) => {
+  try {
+    const res = await api.put(`/shows/${id}`, { show: showData })
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const deleteShow = async (id) => {
+  try {
+    await api.delete(`/shows/${id}`)
   } catch (error) {
     throw error
   }

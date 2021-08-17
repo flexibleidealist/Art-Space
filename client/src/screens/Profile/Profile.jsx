@@ -11,19 +11,17 @@ function Profile(props) {
   })
 
   useEffect(() => {
-    if (currentUser) {
       setProfileData({
         name: currentUser.name,
         artist_statement: currentUser.artist_statement,
         image_url: currentUser.image_url,
       })
-    }
-  }, [])
+    }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const artist = await updateArtist(currentUser.id, profileData)
-    setCurrentUser(artist)
+    const updatedArtist = await updateArtist(currentUser.id, profileData)
+    setCurrentUser(updatedArtist)
   }
 
   const handleChange = (event) => {

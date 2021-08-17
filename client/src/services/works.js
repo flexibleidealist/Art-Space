@@ -26,3 +26,11 @@ export const createWork = async (workData) => {
     throw error
   }
 }
+
+export const deleteWork = async (id) => {
+  try {
+    await api.delete(`/works/${id}`)
+  } catch (error) {
+    throw error
+  }
+}
