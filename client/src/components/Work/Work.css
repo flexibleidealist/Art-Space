@@ -1,0 +1,22 @@
+.work-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.work-button-container button {
+  background-color: var(--red);
+  width: 20px;
+  height: 20px;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  margin: 8px;
+  font-size: 0;
+}
+.work-button-container button:hover {
+  width: 75px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: normal;
+  transition: 300ms ease-in-out;
+  
+}

@@ -1,0 +1,20 @@
+:root {
+  --red: rgb(157, 3, 3);
+  --blue: rgb(14, 113, 218);
+  --yellow: rgb(244, 236, 6);
+}
+
+body img {
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+label {
+  display: inline-block;
+  white-space: nowrap;
+}
+

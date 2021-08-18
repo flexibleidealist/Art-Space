@@ -1,0 +1,31 @@
+.show-footer {
+  padding: 1vh 5vw;
+  margin-bottom: 5vh;
+  height: fit-content;
+  background: linear-gradient(lightgray, white);
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4vh 1vw 1vh 1vw;
+}
+
+.footer-text h1 {
+  font-size: 1.5em;
+  padding: 1vh 1vw;
+  color: var(--red)
+}
+.artist-statement {
+  padding: 1vh 8vw 1vh 1vw;
+  text-align: justify;
+  font-size: 1.3em;
+  font-style: italic;
+  line-height: 1.3em;
+}
+
+.artist-pic {
+  padding: 4vh 0;
+  height: 90%;
+}
