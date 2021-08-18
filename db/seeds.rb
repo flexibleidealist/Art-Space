@@ -20,7 +20,7 @@ show2 = Show.create!(title: "Frida Kahlo: Self-Portraits from the 40s", descript
 pp "#{Show.count} shows created!"
 
 
-work1 = Work.create!(title: "untitled assemblage", year: 2019, materials: "wood, yarn, paper, found objects", image_url: "https://i.imgur.com/GUPnXvx.png", show_id: show1[:id])
+work1 = Work.create!(title: "untitled assemblage", year: 2019, materials: "wood, yarn, paper, found objects", image_url: "https://i.imgur.com/L62gglx.jpg", show_id: show1[:id])
 
 work2 = Work.create!(title: "Self-portrait with monkeys", year: 1943, materials: "oil on canvas", image_url: "https://images.theconversation.com/files/127648/original/image-20160621-19789-cw7ze9.JPG?ixlib=rb-1.1.0&q=30&auto=format&w=600&h=796&fit=crop&dpr=2", show_id: show2[:id])
 
