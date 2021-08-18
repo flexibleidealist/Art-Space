@@ -23,7 +23,7 @@ function ShowCreate(props) {
     setFormData({
     ...formData,
     artist_id: currentUser?.id,})
-  }, [])
+  }, [currentUser])
 
   const handleChange = (event) =>
     setFormData({

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getShow } from "../../services/shows.js"
 import { getArtist } from "../../services/artists.js"
 import Work from "../../components/Work/Work.jsx"
@@ -7,9 +7,8 @@ import ShowFooter from "../../components/ShowFooter/ShowFooter.jsx"
 import "./Show.css"
 import ShowHeader from "../../components/ShowHeader/ShowHeader.jsx"
 
-function Show(props) {
+function Show() {
   const params = useParams()
-  const { currentUser } = props
   const [show, setShow] = useState({})
   const [artist, setArtist] = useState({})
 
@@ -19,7 +18,7 @@ function Show(props) {
       setShow(current_show)
   } 
     fetchShow(params.id)
-  }, [])
+  }, [params.id])
 
   useEffect(() => {
     const fetchArtist = async (id) => {

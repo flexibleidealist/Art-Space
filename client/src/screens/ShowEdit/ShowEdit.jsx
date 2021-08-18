@@ -137,7 +137,7 @@ function ShowEdit() {
       </form>
       <h1>Edit works currently in your show:</h1>
       {showData.works.map(work => (
-        <div className="work-to-edit">
+        <div key={work.id} className="work-to-edit">
           <WorkPreview work={work} workAdded={workAdded} setWorkAdded={setWorkAdded} />
         </div>
       ))}

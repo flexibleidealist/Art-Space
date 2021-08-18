@@ -30,7 +30,7 @@ function WorkPreview(props) {
   }
   return(
     <div className="work-preview-container">
-      <img src={`${work.image_url}`}></img>
+      <img src={`${work.image_url}`} alt={work.title}></img>
         <form className="work-preview-form">
         <div className="work-input">
           <label htmlFor="title">title:</label>
@@ -60,7 +60,7 @@ function WorkPreview(props) {
           />
         </div>
         <div className="work-input">
-          <label htmlFor="image_url">work image URL:</label>
+          <label htmlFor="image_url" >work image URL:</label>
           <input 
           type="text"
           name="image_url"

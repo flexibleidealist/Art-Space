@@ -21,7 +21,7 @@ function Profile(props) {
         username: currentUser?.username,
         password: "",
       })
-    }, [])
+    }, [currentUser])
 
   const handleSubmit = async (event) => {
     event.preventDefault()

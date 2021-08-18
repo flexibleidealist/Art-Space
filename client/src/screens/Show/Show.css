@@ -27,3 +27,11 @@
   width: 20vw;
   margin: 10px;
 }
+
+
+
+@media screen and (max-width: 480px) {
+  .works-section {
+    width: 100vw;
+  }
+}

@@ -4,7 +4,7 @@ function Work(props) {
   const { work } = props
   return(
     <div className="work-container">
-      <img src={`${work.image_url}`}></img>
+      <img src={`${work.image_url}`} alt={work.title}></img>
       <div className="work-button-container">
       <Link to={`/works/${work.id}`}><button>details</button></Link>
       </div>

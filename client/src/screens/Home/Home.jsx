@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react"
 import "./Home.css"
 
-function Home(props){
+function Home(){
   const [animate1, setAnimate1] = useState(false)
-  const [animate2, setAnimate2] = useState(false)
-  const [animate3, setAnimate3] = useState(false)
+  
 
 
   useEffect(() => {
@@ -43,14 +42,14 @@ function Home(props){
           /> 
         <text 
           id="home-title-text"
-          font-size="3.5em" 
+          fontSize="3.5em" 
           fill="white" 
           x="10vw" 
           y="10vw">
             ArtSpace
         </text>
         <text
-        font-size="3em"
+        fontSize="3em"
         fontStyle="italic" 
         fill="white" 
         x="11vw" 

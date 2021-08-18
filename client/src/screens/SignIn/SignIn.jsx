@@ -4,7 +4,7 @@ import { signin } from "../../services/artists"
 import "./SignIn.css"
 
 function SignIn(props) {  
-  const { currentUser, setCurrentUser } = props
+  const { setCurrentUser } = props
   const history = useHistory()
   const [formData, setFormData] = useState({
     username: "",
