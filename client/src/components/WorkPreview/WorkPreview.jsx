@@ -33,6 +33,24 @@ function WorkPreview(props) {
       <img src={`${work.image_url}`}></img>
         <form className="work-preview-form">
         <div className="work-input">
+          <label htmlFor="title">title:</label>
+          <input 
+          type="text"
+          name="title"
+          value={workData.title}
+          onChange={handleWorkChange}
+          />
+        </div>
+        <div className="work-input">
+          <label htmlFor="year">materials:</label>
+          <input 
+          type="text"
+          name="year"
+          value={workData.year}
+          onChange={handleWorkChange}
+          />
+        </div>
+        <div className="work-input">
           <label htmlFor="materials">materials:</label>
           <input 
           type="text"

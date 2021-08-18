@@ -9,20 +9,27 @@
 
 #home-circle-1 {
   fill: var(--red);
-  opacity: .75;
-  
-}
-.rest-position-circle-1 {
-  transform: scale(5) translate(-75vw, -50vh);
-  transition: 1500ms ease-in-out;
 }
 
 #home-circle-2 {
-  fill: var(--blue);
-  opacity: .75;
+  fill: var(--yellow);
 }
 
 #home-circle-3 {
-  fill: var(--yellow);
-  opacity: .75;
+  fill: var(--blue);
+}
+
+.animate-circle-1 {
+  transform: scale(62);
+  transition: 2000ms ease-in-out;
+}
+.animate-circle-2 {
+  transform: scale(55);
+  transition: 2000ms ease-in-out;
+
+}
+
+.animate-circle-3 {
+  transform: scale(55);
+  transition: 2000ms ease-in-out;
 }
