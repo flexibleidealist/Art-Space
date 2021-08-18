@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { getWork } from "../../services/works.js"
 import "./WorkDetail.css"
 
@@ -23,10 +23,10 @@ function WorkDetail() {
           <h1 className="work-title">{work.title}</h1>
           <h1>{work.year}</h1>
           <h1>{work.materials}</h1>
+          <div className="work-detail-button-container">
+            <Link to={`/shows/${work.show_id}`}><button>back</button></Link>
+          </div>
         </div>
-        {/* {currentUser.id === work.artist_id ?
-          <Link to={`/works/${work.id}/edit`}><button>edit details</button></Link>
-        } */}
     </div>
   )
 }

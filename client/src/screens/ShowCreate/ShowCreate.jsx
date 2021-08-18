@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { createShow } from "../../services/shows.js"
 import { createWork } from "../../services/works.js"
+import "./ShowCreate.css"
 function ShowCreate(props) {
   const { currentUser } = props
   const [formData, setFormData] = useState({
@@ -49,8 +50,10 @@ function ShowCreate(props) {
     }
 
   return(
-    <div>
+    <div className="create-show">
+      <h1>Create a header for your show:</h1>
       <form className="create-show-form" onSubmit={handleSubmit} autoComplete="off">
+        <div className="header-input">
         <label htmlFor="title">show title: </label>
         <input
           name="title"
@@ -60,6 +63,8 @@ function ShowCreate(props) {
           onChange={handleChange}
           required
         />
+        </div>
+        <div className="header-input">
         <label htmlFor="description">description: </label>
         <textarea
           name="description"
@@ -68,6 +73,8 @@ function ShowCreate(props) {
           onChange={handleChange}
           required
         />
+        </div>
+        <div className="header-input">
         <label htmlFor="image_url">image URL: </label>
         <input
           name="image_url"
@@ -76,16 +83,21 @@ function ShowCreate(props) {
           onChange={handleChange}
           required
         />
+        </div>
       <button type="submit">submit</button>
       </form >
+      <h1>add works to your show:</h1>
       <form onSubmit={handleWorkSubmit} className="create-work-form">
-        <label htmlFor="title">work title: </label>
-        <input 
-          type="text" 
-          name="title"
-          value={workData.title}
-          onChange={handleWorkChange}
-        />
+        <div className="work-input">
+          <label htmlFor="title">work title: </label>
+          <input 
+            type="text" 
+            name="title"
+            value={workData.title}
+            onChange={handleWorkChange}
+          />
+        </div>
+        <div className="work-input">
         <label htmlFor="year">year: </label>
         <input 
           type="text"
@@ -93,6 +105,9 @@ function ShowCreate(props) {
           value={workData.year}
           onChange={handleWorkChange}
         />
+        </div>
+        <div className="work-input">
+
         <label htmlFor="materials">materials: </label>
         <input 
           type="text"
@@ -100,6 +115,8 @@ function ShowCreate(props) {
           value={workData.materials}
           onChange={handleWorkChange}
         />
+        </div>
+        <div className="work-input">
         <label htmlFor="image_url">work image URL: </label>
         <input 
           type="text"
@@ -107,6 +124,7 @@ function ShowCreate(props) {
           value={workData.image_url}
           onChange={handleWorkChange}
         />
+        </div>
         <button onClick={handleWorkSubmit}>submit work</button>
       </form>
     </div>

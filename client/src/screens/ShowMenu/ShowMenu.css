@@ -1,11 +1,16 @@
 .show-menu-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 8vh 5vw;
+  align-items: flex-start;
+  padding: 8vh 10vw;
 }
 
 .show-link {
   font-size: 2em;
   margin: 4vh 2vw;
+}
+
+.show-link:hover {
+  color: var(--red);
+  transition: 500ms ease-in-out;
 }

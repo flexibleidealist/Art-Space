@@ -6,16 +6,20 @@ import "./Profile.css"
 function Profile(props) {
   const { currentUser, setCurrentUser } = props
   const [profileData, setProfileData] = useState({
-    name: "",
-    artist_statement: "",
-    image_url: "",
+    name: currentUser?.name,
+    artist_statement: currentUser?.artist_statement,
+    image_url: currentUser?.image_url,
+    username: currentUser?.username,
+    password: "",
   })
 
   useEffect(() => {
       setProfileData({
-        name: currentUser.name,
-        artist_statement: currentUser.artist_statement,
-        image_url: currentUser.image_url,
+        name: currentUser?.name,
+        artist_statement: currentUser?.artist_statement,
+        image_url: currentUser?.image_url,
+        username: currentUser?.username,
+        password: "",
       })
     }, [])
 
@@ -62,6 +66,17 @@ function Profile(props) {
             value={profileData.image_url}
             placeholder="URL for Profile Pic"
             onChange={handleChange}
+          />
+        </div>
+        <div className="input">
+        <label htmlFor="password">password:</label>
+          <input 
+            name="password"
+            type="password"
+            value={profileData.password}
+            placeholder="password"
+            onChange={handleChange}
+            required
           />
         </div>
         <button type="submit">submit</button>

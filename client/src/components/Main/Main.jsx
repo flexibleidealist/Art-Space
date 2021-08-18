@@ -7,7 +7,7 @@ import ShowMenu from "../../screens/ShowMenu/ShowMenu.jsx"
 import WorkDetail from "../../screens/WorkDetail/WorkDetail.jsx"
 import WorkEdit from "../../screens/WorkEdit/WorkEdit.jsx"
 import Profile from "../../screens/Profile/Profile.jsx"
-
+import "./Main.css"
 
 function Main(props) {
   const { currentUser, setCurrentUser } = props

@@ -25,6 +25,7 @@ export const signin = async (artistData) => {
 
 export const updateArtist = async (id, artistData) => {
   try{
+    console.log(id, artistData)
     const res = await api.put(`/artists/${id}`, {artist: artistData})
     return res.data
   } catch (error) {

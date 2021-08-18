@@ -16,16 +16,18 @@ function ShowMenu() {
   }, []);
 
   return(
-    <div className="show-menu-container">
-      {shows.map((show) => (
-        <Link to={`/shows/${show.id}`}> 
-          <div className="show-link" key={show.id}>
-          <h1>{show.title}</h1>
-          </div>
-        </Link>
-      ))}
+    <div className="svg-container">
+      
+      <div className="show-menu-container">
+        {shows.map((show) => (
+          <Link to={`/shows/${show.id}`}> 
+            <div className="show-link" key={show.id}>
+            <h1>{show.title}</h1>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
-    
   )
 }
 

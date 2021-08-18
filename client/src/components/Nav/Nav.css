@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px 5px 15px;
-  border-bottom: 1px solid gray;
   max-height: 8vh;
   min-height: 45px;
   font-size: 1.2em;
@@ -24,6 +23,8 @@
   font-size: .7em;
   padding: 4px 6px;
   color: var(--red);
+  border-radius: 8px;
+  border: none;
 }
 
 .user-nav-bar {

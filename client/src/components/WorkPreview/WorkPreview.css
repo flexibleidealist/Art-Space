@@ -1,0 +1,24 @@
+.work-preview-container {
+  display: flex;
+  margin: 5vw;
+  width: 30vw;
+}
+
+.work-preview-container img {
+  width: 20vw;
+  margin: 10px;
+}
+
+.work-preview-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 5vh;
+}
+
+.work-preview-container form input {
+  width: 30vw;
+}
+.work-preview-container form * {
+  margin: 5px;
+}

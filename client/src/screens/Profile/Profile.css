@@ -1,7 +1,13 @@
 .profile-form-container {
   padding: 10px 0;
 }
-
+#profile-form button {
+  border: none;
+  background-color: var(--red);
+  color: white;
+  border-radius: 6px;
+  height: 30px;
+}
 #profile-form {
   padding: 10px;
   display: flex;

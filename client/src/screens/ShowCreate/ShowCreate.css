@@ -1,2 +1,24 @@
+/* .create-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+} */
 
+.create-show-form  {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 45vw;
+}
 
+.header-input {
+  width: 45vw;
+}
+
+.create-work-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 45vw;
+}

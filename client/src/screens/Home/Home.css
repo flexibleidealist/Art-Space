@@ -1,20 +1,24 @@
-.home {
-  padding: 5vh 5vw;
-}
+
 
 .home h1 {
   font-size: 3em;
-  margin-left: 7vw;
+  margin-left: 10vw;
   margin-top: 5vh;
+  background: transparent;
 }
 
 #home-circle-1 {
-  fill: var(--blue);
+  fill: var(--red);
   opacity: .75;
+  
+}
+.rest-position-circle-1 {
+  transform: scale(5) translate(-75vw, -50vh);
+  transition: 1500ms ease-in-out;
 }
 
 #home-circle-2 {
-  fill: var(--red);
+  fill: var(--blue);
   opacity: .75;
 }
 

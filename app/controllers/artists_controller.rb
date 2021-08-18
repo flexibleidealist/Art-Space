@@ -8,7 +8,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    render json: @artist, status: :ok
+    render json: @artist, include: :show
   end
 
   def create
@@ -25,11 +25,13 @@ class ArtistsController < ApplicationController
   end
 
   def update
-    if @artist.update(artist_params)
-      render json: @artist, status: :ok
-    else 
-      render json: @artist.errors, status: :unprocessable_entity
+    if @artist.authenticate(artist_params[:password])
+      if @artist.update(artist_params) 
+        render json: @artist, status: :ok
+      else 
+        render json: @artist.errors, status: :unprocessable_entity
     end
+  end
   end
 
   def destroy
@@ -54,7 +56,7 @@ class ArtistsController < ApplicationController
   end
 
   def verify
-    render json: @current_artist.attributes.except("password_digest"), include: :shows, status: :ok
+    render json: @current_artist.attributes.except("password_digest"), status: :ok
   end
 
   private 
@@ -77,6 +79,6 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :image_url, :artist_statement)
+    params.require(:artist).permit(:name, :image_url, :artist_statement, :username, :password)
   end
 end

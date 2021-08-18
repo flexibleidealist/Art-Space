@@ -1,0 +1,84 @@
+.edit-show-container h1 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-left: 4vw;
+}
+
+.edit-show-container button {
+  border: none;
+  background-color: var(--red);
+  color: white;
+  border-radius: 6px;
+  height: 30px;
+}
+
+.edit-show-container label {
+  font-size: 1.1em;
+} 
+
+.header-editor-form {
+  margin: 2vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.header-editor-form .input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30vw;
+}
+.header-editor-form input, textarea {
+  margin: 10px;
+  width: 45vw;
+}
+
+
+.header-editor-form button {
+  width: 100px;
+  margin-left: 50vw;
+}
+
+.show-edit-buttons {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5vh;
+}
+
+.show-edit-buttons * {
+  margin: 0 15px;
+}
+
+.create-work-form {
+  margin: 2vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 60vw;
+  margin-left: 5vw;
+}
+
+.create-work-form * {
+  margin: 8px;
+}
+
+.create-work-form button {
+  width: 100px;
+  margin-left: 50vw;
+}
+
+
+.create-work-form .work-input {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.create-work-form .work-input input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 22px;
+    padding-right: 25vw;
+    
+  }

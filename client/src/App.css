@@ -4,6 +4,10 @@
   --yellow: rgb(244, 236, 6);
 }
 
+body img {
+  object-fit: contain;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -11,4 +15,6 @@ a {
 
 label {
   display: inline-block;
+  white-space: nowrap;
 }
+
