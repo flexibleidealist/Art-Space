@@ -28961,3 +28961,758 @@ Processing by ArtistsController#show as HTML
 Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.2ms | Allocations: 3078)
 
 
+Started GET "/artists/verify" for ::1 at 2021-08-18 11:02:09 -0400
+Started GET "/shows" for ::1 at 2021-08-18 11:02:09 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#verify as HTML
+Processing by ShowsController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 24ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 3289)
+
+
+  [1m[36mShow Load (9.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 156ms (Views: 100.9ms | ActiveRecord: 36.2ms | Allocations: 12097)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 11:03:32 -0400
+Processing by ShowsController#index as HTML
+Started GET "/artists/verify" for ::1 at 2021-08-18 11:03:32 -0400
+Processing by ArtistsController#verify as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 214)
+
+
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 115ms (Views: 112.3ms | ActiveRecord: 1.2ms | Allocations: 1561)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 11:15:13 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (1.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 105ms (Views: 104.1ms | ActiveRecord: 37.9ms | Allocations: 2973)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 11:15:32 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (2.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 2.2ms | Allocations: 882)
+
+
+Started GET "/artists/undefined" for ::1 at 2021-08-18 11:15:33 -0400
+Started GET "/shows/2" for ::1 at 2021-08-18 11:15:33 -0400
+Processing by ArtistsController#show as HTML
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  Parameters: {"id"=>"2"}
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (2.0ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 76ms (Views: 43.6ms | ActiveRecord: 26.2ms | Allocations: 11627)
+
+
+Started GET "/artists/2" for ::1 at 2021-08-18 11:15:33 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 251ms (ActiveRecord: 90.5ms | Allocations: 15674)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (103.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 238ms (Views: 4.7ms | ActiveRecord: 110.9ms | Allocations: 44487)
+
+
+Started GET "/works/10" for ::1 at 2021-08-18 11:24:14 -0400
+Processing by WorksController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mWork Load (1.3ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+Completed 200 OK in 57ms (Views: 3.2ms | ActiveRecord: 20.1ms | Allocations: 2976)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 11:24:16 -0400
+Processing by ShowsController#show as HTML
+Started GET "/artists/undefined" for ::1 at 2021-08-18 11:24:16 -0400
+  Parameters: {"id"=>"2"}
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 17ms (Views: 3.6ms | ActiveRecord: 1.0ms | Allocations: 2338)
+
+
+Started GET "/artists/2" for ::1 at 2021-08-18 11:24:16 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 56ms (Views: 12.3ms | ActiveRecord: 1.4ms | Allocations: 1523)
+
+
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 221ms (ActiveRecord: 91.5ms | Allocations: 7014)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+Started GET "/shows" for ::1 at 2021-08-18 12:00:21 -0400
+Processing by ShowsController#index as HTML
+Started GET "/artists/verify" for ::1 at 2021-08-18 12:00:21 -0400
+Processing by ArtistsController#verify as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.1ms | Allocations: 209)
+
+
+  [1m[36mShow Load (1.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 627ms (Views: 620.7ms | ActiveRecord: 50.0ms | Allocations: 4046)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:00:28 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.3ms | Allocations: 881)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 12:00:30 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"2"}
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:00:30 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.8ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 72ms (Views: 15.8ms | ActiveRecord: 1.5ms | Allocations: 2917)
+
+
+Started GET "/artists/2" for ::1 at 2021-08-18 12:00:30 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (46.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mArtist Load (8.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 268ms (ActiveRecord: 201.2ms | Allocations: 6004)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (37.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 311ms (Views: 117.8ms | ActiveRecord: 84.1ms | Allocations: 36303)
+
+
+Started GET "/works/4" for ::1 at 2021-08-18 12:00:40 -0400
+Processing by WorksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mWork Load (1.0ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 699)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 12:00:44 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"2"}
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:00:44 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 9ms (ActiveRecord: 1.2ms | Allocations: 889)
+
+
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mWork Load (17.2ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 146ms (Views: 112.0ms | ActiveRecord: 18.4ms | Allocations: 35826)
+
+
+Started GET "/artists/2" for ::1 at 2021-08-18 12:00:44 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (14.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 37ms (Views: 9.0ms | ActiveRecord: 14.7ms | Allocations: 8066)
+
+
+Started POST "/artists/login" for ::1 at 2021-08-18 12:00:55 -0400
+Processing by ArtistsController#login as HTML
+  Parameters: {"artist"=>{"username"=>"Frida", "password"=>"[FILTERED]"}}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."username" = $1 LIMIT $2[0m  [["username", "Frida"], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:46:in `login'
+Completed 200 OK in 260ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 1075)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:00:55 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.6ms | Allocations: 882)
+
+
+Started PUT "/artists/2" for ::1 at 2021-08-18 12:01:19 -0400
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"Frida", "artist_statement"=>"Nothing is absolute. Everything changes, everything moves, everything revolves, everything flies and goes away.", "image_url"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg/1024px-Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg", "username"=>"Frida", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+  [1m[36mArtist Update (1.5ms)[0m  [1m[33mUPDATE "artists" SET "password_digest" = $1, "updated_at" = $2, "name" = $3 WHERE "artists"."id" = $4[0m  [["password_digest", "$2a$12$koosEd55LPoYIhfUscgBvOPVnmMtrLfowrCjfWqyPBdRBn0I/L6zy"], ["updated_at", "2021-08-18 16:01:20.516070"], ["name", "Frida"], ["id", 2]]
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+Completed 200 OK in 561ms (Views: 0.4ms | ActiveRecord: 5.2ms | Allocations: 3096)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:01:20 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.6ms | Allocations: 881)
+
+
+Started PUT "/artists/2" for ::1 at 2021-08-18 12:01:27 -0400
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"Frida Kahlo", "artist_statement"=>"Nothing is absolute. Everything changes, everything moves, everything revolves, everything flies and goes away.", "image_url"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg/1024px-Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg", "username"=>"Frida", "password"=>"[FILTERED]"}, "id"=>"2"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+  [1m[36mArtist Update (0.3ms)[0m  [1m[33mUPDATE "artists" SET "password_digest" = $1, "updated_at" = $2, "name" = $3 WHERE "artists"."id" = $4[0m  [["password_digest", "$2a$12$3JB0fvY1HWbY9CZnJl0fB.S9yba4wr1XUs/WWp9JW/CttrHpeDRR."], ["updated_at", "2021-08-18 16:01:28.000393"], ["name", "Frida Kahlo"], ["id", 2]]
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+Completed 200 OK in 525ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 2542)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:01:28 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms | Allocations: 881)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 12:01:30 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 1835)
+
+
+Started PUT "/shows/2" for ::1 at 2021-08-18 12:01:47 -0400
+Processing by ShowsController#update as HTML
+  Parameters: {"show"=>{"id"=>2, "title"=>"Frida Kahlo: Self-Portraits from the 1940s", "description"=>"They thought I was a Surrealist, but I wasn’t. I never painted dreams. I painted my own reality. I am my own muse. I am the subject I know best. The subject I want to better.", "image_url"=>"https://upload.wikimedia.org/wikipedia/en/1/1e/Frida_Kahlo_%28self_portrait%29.jpg", "artist_id"=>2, "created_at"=>"2021-08-18T14:09:18.281Z", "updated_at"=>"2021-08-18T14:09:18.281Z", "works"=>[{"id"=>2, "title"=>"Self-portrait with monkeys", "year"=>1943, "materials"=>"oil on canvas", "image_url"=>"https://images.theconversation.com/files/127648/original/image-20160621-19789-cw7ze9.JPG?ixlib=rb-1.1.0&q=30&auto=format&w=600&h=796&fit=crop&dpr=2", "show_id"=>2, "created_at"=>"2021-08-18T14:09:18.307Z", "updated_at"=>"2021-08-18T14:09:18.307Z"}, {"id"=>3, "title"=>"Self-portrait with thorn necklace and hummingbird", "year"=>1940, "materials"=>"oil on canvas", "image_url"=>"https://www.artyfactory.com/art_appreciation/portraits/frida_kahlo/self_portrait_2.jpg", "show_id"=>2, "created_at"=>"2021-08-18T14:09:18.315Z", "updated_at"=>"2021-08-18T14:09:18.315Z"}, {"id"=>4, "title"=>"Self-portrait as Tehuana", "year"=>1943, "materials"=>"oil on canvas", "image_url"=>"https://i.guim.co.uk/img/media/6bd8f7155d46f8014e4857b29d0118dc34140705/52_65_2541_3222/master/2541.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=d9d634b663a5e67736f82059a0b4c5d8", "show_id"=>2, "created_at"=>"2021-08-18T14:09:18.322Z", "updated_at"=>"2021-08-18T14:09:18.322Z"}, {"id"=>10, "title"=>"Self-portrait with small monkey", "year"=>1940, "materials"=>"oil on canvas", "image_url"=>"https://i.ebayimg.com/images/g/XuoAAOSw6JpfUWOW/s-l1600.jpg\n", "show_id"=>2, "created_at"=>"2021-08-18T14:09:18.366Z", "updated_at"=>"2021-08-18T14:09:18.366Z"}]}, "id"=>"2"}
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `authorize_request'
+[31mUnpermitted parameters: :id, :created_at, :updated_at, :works[0m
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shows_controller.rb:24:in `update'
+  [1m[36mShow Update (0.4ms)[0m  [1m[33mUPDATE "shows" SET "title" = $1, "updated_at" = $2 WHERE "shows"."id" = $3[0m  [["title", "Frida Kahlo: Self-Portraits from the 1940s"], ["updated_at", "2021-08-18 16:01:47.312730"], ["id", 2]]
+  ↳ app/controllers/shows_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shows_controller.rb:24:in `update'
+Completed 200 OK in 46ms (Views: 1.0ms | ActiveRecord: 2.4ms | Allocations: 4164)
+
+
+Started PUT "/works/2" for ::1 at 2021-08-18 12:01:57 -0400
+Processing by WorksController#update as HTML
+  Parameters: {"title"=>"Self-portrait with monkeys", "year"=>1943, "materials"=>"oil on boad", "image_url"=>"https://images.theconversation.com/files/127648/original/image-20160621-19789-cw7ze9.JPG?ixlib=rb-1.1.0&q=30&auto=format&w=600&h=796&fit=crop&dpr=2", "show_id"=>2, "id"=>"2", "work"=>{"title"=>"Self-portrait with monkeys", "year"=>1943, "materials"=>"oil on boad", "image_url"=>"https://images.theconversation.com/files/127648/original/image-20160621-19789-cw7ze9.JPG?ixlib=rb-1.1.0&q=30&auto=format&w=600&h=796&fit=crop&dpr=2", "show_id"=>2}}
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/works_controller.rb:24:in `update'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:24:in `update'
+  [1m[36mWork Update (0.4ms)[0m  [1m[33mUPDATE "works" SET "materials" = $1, "updated_at" = $2 WHERE "works"."id" = $3[0m  [["materials", "oil on boad"], ["updated_at", "2021-08-18 16:01:57.646397"], ["id", 2]]
+  ↳ app/controllers/works_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/works_controller.rb:24:in `update'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 3515)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 12:01:57 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 10ms (Views: 3.7ms | ActiveRecord: 1.6ms | Allocations: 1834)
+
+
+Started POST "/works" for ::1 at 2021-08-18 12:02:40 -0400
+Processing by WorksController#create as HTML
+  Parameters: {"title"=>"Self-portrait with braid", "year"=>"1941", "materials"=>"oil on canvas", "show_id"=>"2", "image_url"=>"https://www.fridakahlo.org/images/paintings/self-portrait-with-braid.jpg", "work"=>{"title"=>"Self-portrait with braid", "year"=>"1941", "materials"=>"oil on canvas", "image_url"=>"https://www.fridakahlo.org/images/paintings/self-portrait-with-braid.jpg", "show_id"=>"2"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/works_controller.rb:16:in `create'
+  [1m[36mShow Load (1.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:16:in `create'
+  [1m[36mWork Create (4.9ms)[0m  [1m[32mINSERT INTO "works" ("title", "year", "materials", "image_url", "show_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Self-portrait with braid"], ["year", 1941], ["materials", "oil on canvas"], ["image_url", "https://www.fridakahlo.org/images/paintings/self-portrait-with-braid.jpg"], ["show_id", 2], ["created_at", "2021-08-18 16:02:40.807885"], ["updated_at", "2021-08-18 16:02:40.807885"]]
+  ↳ app/controllers/works_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/works_controller.rb:16:in `create'
+Completed 200 OK in 28ms (Views: 1.4ms | ActiveRecord: 12.9ms | Allocations: 2883)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 12:02:40 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mShow Load (0.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.3ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1950)
+
+
+Started GET "/shows/2" for ::1 at 2021-08-18 12:02:47 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"2"}
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:02:47 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mArtist Load (15.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 40ms (ActiveRecord: 15.1ms | Allocations: 1203)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mWork Load (122.6ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 2]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 165ms (Views: 5.0ms | ActiveRecord: 122.7ms | Allocations: 28078)
+
+
+Started GET "/artists/2" for ::1 at 2021-08-18 12:02:47 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (12.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (3.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 111ms (Views: 7.0ms | ActiveRecord: 15.7ms | Allocations: 8819)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:02:58 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.8ms | Allocations: 881)
+
+
+Started POST "/artists/login" for ::1 at 2021-08-18 12:03:07 -0400
+Processing by ArtistsController#login as HTML
+  Parameters: {"artist"=>{"username"=>"Nicholas", "password"=>"[FILTERED]"}}
+  [1m[36mArtist Load (2.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."username" = $1 LIMIT $2[0m  [["username", "Nicholas"], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:46:in `login'
+Completed 200 OK in 283ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 877)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:03:08 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 881)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:03:14 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 882)
+
+
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:03:15 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+Started GET "/shows/1" for ::1 at 2021-08-18 12:03:15 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 30ms (ActiveRecord: 0.8ms | Allocations: 1195)
+
+
+  [1m[36mShow Load (4.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (18.8ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 239ms (Views: 4.7ms | ActiveRecord: 23.4ms | Allocations: 35544)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:03:15 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (96.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 114ms (Views: 3.6ms | ActiveRecord: 96.8ms | Allocations: 2595)
+
+
+Started GET "/shows/1" for ::1 at 2021-08-18 12:03:32 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.8ms | Allocations: 2046)
+
+
+Started DELETE "/works/9" for ::1 at 2021-08-18 12:03:39 -0400
+Processing by WorksController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/works_controller.rb:32:in `destroy'
+  [1m[36mWork Destroy (0.5ms)[0m  [1m[31mDELETE FROM "works" WHERE "works"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/works_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (48.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/works_controller.rb:32:in `destroy'
+Completed 200 OK in 74ms (Views: 1.0ms | ActiveRecord: 49.7ms | Allocations: 1903)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:03:41 -0400
+Processing by ShowsController#index as HTML
+Started GET "/shows/1" for ::1 at 2021-08-18 12:03:41 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/artists/verify" for ::1 at 2021-08-18 12:03:41 -0400
+Processing by ArtistsController#verify as HTML
+  [1m[36mShow Load (1.1ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (1.0ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 59ms (Views: 4.9ms | ActiveRecord: 2.2ms | Allocations: 2999)
+
+
+  [1m[36mShow Load (5.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 74ms (Views: 67.8ms | ActiveRecord: 5.7ms | Allocations: 4728)
+
+
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `authorize_request'
+Completed 200 OK in 927ms (Views: 0.4ms | ActiveRecord: 24.5ms | Allocations: 6131)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:03:42 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.7ms | Allocations: 881)
+
+
+Started GET "/shows/1" for ::1 at 2021-08-18 12:03:46 -0400
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:03:46 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mShow Load (4.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mArtist Load (9.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 15ms (ActiveRecord: 9.4ms | Allocations: 1195)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mWork Load (1.0ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 133ms (Views: 120.8ms | ActiveRecord: 5.3ms | Allocations: 35541)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:03:46 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (0.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 1710)
+
+
+Started GET "/works/5" for ::1 at 2021-08-18 12:03:53 -0400
+Processing by WorksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mWork Load (0.5ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 663)
+
+
+Started GET "/shows/1" for ::1 at 2021-08-18 12:03:55 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:03:55 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mArtist Load (1.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 10ms (ActiveRecord: 1.8ms | Allocations: 1201)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mWork Load (113.1ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 127ms (Views: 4.6ms | ActiveRecord: 113.6ms | Allocations: 35921)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:03:55 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (10.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (5.0ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 25ms (Views: 5.8ms | ActiveRecord: 15.4ms | Allocations: 7359)
+
+
+Started PUT "/artists/1" for ::1 at 2021-08-18 12:04:30 -0400
+Processing by ArtistsController#update as HTML
+  Parameters: {"artist"=>{"name"=>"Nicholas Charles Rynearson", "artist_statement"=>"I mainly work with found images. I often begin by asking, what simple intervention can I make in an image that will transform it? I like to work with formal qualities and my favorite interventions are forms of drawing or erasure. When I draw, I rarely use pens, pencils, or charcoal. Instead, I draw with a knife, with a thread and needle, or by creating lines and forms through juxtaposition. Erasure sometimes means cutting an element out of an image. But more often I prefer partial erasure: removing a portion of a particular element, drawing over it, or obscuring it from view. I like to use partial erasure to stimulate the viewers' imagination, inviting them to fill in gaps, to draw unexpected connections, or sometimes to see a ghost.\nMy formal training is in academia. In 2006 I finished my PhD in Classics, with a specialty in Greek literature. As an artist, I’m mostly self-taught but I have taken a few classes at SVA, including figure drawing and a collage workshop. I live in Brooklyn.", "image_url"=>"https://i.imgur.com/kHvKSSc.jpg", "username"=>"Nicholas", "password"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+  [1m[36mArtist Update (0.8ms)[0m  [1m[33mUPDATE "artists" SET "password_digest" = $1, "updated_at" = $2, "name" = $3 WHERE "artists"."id" = $4[0m  [["password_digest", "$2a$12$7709oC1/dr8P4PSljxTDYu0naSIfHzFeAkUqC07bvJB3tSgPk2Mv."], ["updated_at", "2021-08-18 16:04:30.760629"], ["name", "Nicholas Charles Rynearson"], ["id", 1]]
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:29:in `update'
+Completed 200 OK in 518ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 2545)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:04:30 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (8.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 8.6ms | Allocations: 881)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:04:45 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.6ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.6ms | Allocations: 881)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:04:50 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (21.2ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 31ms (Views: 9.6ms | ActiveRecord: 21.2ms | Allocations: 881)
+
+
+Started GET "/shows" for ::1 at 2021-08-18 12:08:49 -0400
+Processing by ShowsController#index as HTML
+  [1m[36mShow Load (0.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows"[0m
+  ↳ app/controllers/shows_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.9ms | Allocations: 881)
+
+
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:08:51 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mArtist Load (3.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 32ms (ActiveRecord: 3.7ms | Allocations: 517)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+Started GET "/shows/1" for ::1 at 2021-08-18 12:08:51 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.8ms | Allocations: 1930)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:08:51 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (0.3ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 69ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 1975)
+
+
+Started GET "/works/1" for ::1 at 2021-08-18 12:10:16 -0400
+Processing by WorksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWork Load (0.4ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+Completed 200 OK in 30ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 666)
+
+
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:10:21 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+Started GET "/shows/1" for ::1 at 2021-08-18 12:10:21 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mShow Load (0.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+Completed 404 Not Found in 20ms (ActiveRecord: 0.4ms | Allocations: 1530)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mWork Load (0.7ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 112ms (Views: 104.9ms | ActiveRecord: 1.1ms | Allocations: 35432)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:10:21 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (2.7ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 4.3ms | ActiveRecord: 3.9ms | Allocations: 4438)
+
+
+Started GET "/works/5" for ::1 at 2021-08-18 12:10:32 -0400
+Processing by WorksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mWork Load (1.2ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 1.2ms | Allocations: 663)
+
+
+Started GET "/shows/1" for ::1 at 2021-08-18 12:10:47 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:10:47 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (2.4ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+Completed 404 Not Found in 27ms (ActiveRecord: 0.9ms | Allocations: 581)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mWork Load (102.7ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 165ms (Views: 22.4ms | ActiveRecord: 105.1ms | Allocations: 36530)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:10:47 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  [1m[36mShow Load (1.8ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 32ms (Views: 5.8ms | ActiveRecord: 2.4ms | Allocations: 7110)
+
+
+Started GET "/works/6" for ::1 at 2021-08-18 12:10:53 -0400
+Processing by WorksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mWork Load (0.9ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/works_controller.rb:39:in `get_work'
+Completed 200 OK in 32ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 663)
+
+
+Started GET "/shows/1" for ::1 at 2021-08-18 12:11:03 -0400
+Processing by ShowsController#show as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/artists/undefined" for ::1 at 2021-08-18 12:11:03 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"undefined"}
+  [1m[36mShow Load (11.9ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shows_controller.rb:44:in `get_show'
+  [1m[36mWork Load (1.1ms)[0m  [1m[34mSELECT "works".* FROM "works" WHERE "works"."show_id" = $1[0m  [["show_id", 1]]
+  ↳ app/controllers/shows_controller.rb:11:in `show'
+Completed 200 OK in 32ms (Views: 8.7ms | ActiveRecord: 13.0ms | Allocations: 2544)
+
+
+Started GET "/artists/1" for ::1 at 2021-08-18 12:11:03 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mArtist Load (4.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+  ↳ app/controllers/artists_controller.rb:78:in `get_artist'
+Completed 404 Not Found in 117ms (ActiveRecord: 0.3ms | Allocations: 3989)
+
+
+  [1m[36mShow Load (0.5ms)[0m  [1m[34mSELECT "shows".* FROM "shows" WHERE "shows"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 1], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=undefined):
+  
+app/controllers/artists_controller.rb:78:in `get_artist'
+  ↳ app/controllers/artists_controller.rb:11:in `show'
+Completed 200 OK in 156ms (Views: 100.8ms | ActiveRecord: 4.8ms | Allocations: 35289)
+
+
