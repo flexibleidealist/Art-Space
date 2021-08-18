@@ -13,11 +13,11 @@ Any user of the app will be able to browse shows and view work detail pages. Reg
 | :--------------: | :----------------------------------------- |
 |      React       | Client-side components to manage user interaction |
 |    React Router  | Manage navigation between screens  |
-| CSS | Styling |
-| axios | API requests |
-| bcrypt | User authentication |
+| Axios | API requests |
+| bcrypt | Password hashing for user authentication |
+| JWT | User authentication |
 |    Ruby on Rails      | Back-end database interactions |
-|  Postgresql   | Database |
+|  SQL   | Database |
 
 ### Client
 

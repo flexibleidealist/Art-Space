@@ -1,0 +1,24 @@
+.profile-form-container {
+  padding: 10px 0;
+}
+#profile-form button {
+  border: none;
+  background-color: var(--red);
+  color: white;
+  border-radius: 6px;
+  height: 30px;
+}
+#profile-form {
+  padding: 10px;
+  display: flex;
+  margin-right: 15vw;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#profile-form input, textarea {
+  margin: 10px;
+  width: 45vw;
+}
+

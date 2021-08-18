@@ -1,0 +1,35 @@
+
+
+.home h1 {
+  font-size: 3em;
+  margin-left: 10vw;
+  margin-top: 5vh;
+  background: transparent;
+}
+
+#home-circle-1 {
+  fill: var(--red);
+}
+
+#home-circle-2 {
+  fill: var(--yellow);
+}
+
+#home-circle-3 {
+  fill: var(--blue);
+}
+
+.animate-circle-1 {
+  transform: scale(62);
+  transition: 2000ms ease-in-out;
+}
+.animate-circle-2 {
+  transform: scale(55);
+  transition: 2000ms ease-in-out;
+
+}
+
+.animate-circle-3 {
+  transform: scale(55);
+  transition: 2000ms ease-in-out;
+}
