@@ -3,6 +3,7 @@
 ## About
 
 Art-Space is an online arts application that allows visual artists to share their work in curated virtual shows.
+Visit the app here: https://myartspace.netlify.app
 
 ## MVP
 Any user of the app will be able to browse shows and view work detail pages. Registered artists will be able to create one show and edit the show details as well as individual work details. 
